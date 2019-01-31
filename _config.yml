@@ -10,7 +10,7 @@ description: >- # this means to ignore newlines until "baseurl:"
   event of Dunman High School’s International and Strategic Affairs 
   Council (ISAC) with a trademark on ASEAN. The annual summit brings 
   together about 200 young people from the Southeast Asian region and beyond.
-baseurl: "" # the subpath of your site root, e.g. /blog
+baseurl: "/dhap-2019" # the subpath of your site root, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 facebook_url: https://www.facebook.com/dhap2019/
 instagram_url: https://www.instagram.com/dhaseanplus/
