@@ -37,11 +37,13 @@
 
 article.content .person__description > h2 {
     width: auto;
+    text-align: center;
 }
 
 .person__description > h3 {
     margin-top: 0px;
     font-size: 15pt;
+    text-align: center;
 }
 
 @media screen and (max-width: 1000px) {
