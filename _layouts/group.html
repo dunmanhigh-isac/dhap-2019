@@ -17,10 +17,12 @@ stylesheets:
 {% assign people = site.people | where: "group", page.name_short | sort %}
 
 {% if page.name_short == "HCC" %}
+
+    {% assign frontroom_count = 2 %}
     
     <h1 class="person__group-header">Frontroom</h1>
     <div>
-        {% for person in people limit: 4 %}
+        {% for person in people limit: frontroom_count %}
             <div class="person">
                 <div class="person__image">
                     <img src="{{ site.baseurl }}/assets/img/people/{{ person.image_name }}" alt="{{ person.name }}">
@@ -36,7 +38,7 @@ stylesheets:
 
     <h1 class="person__group-header">Backroom</h1>
     <div>
-        {% for person in people offset: 4 %}
+        {% for person in people offset: frontroom_count %}
             <div class="person">
                 <div class="person__image">
                     <img src="{{ site.baseurl }}/assets/img/people/{{ person.image_name }}" alt="{{ person.name }}">
