@@ -5,12 +5,12 @@
     margin-top: 5vh;
 }
 
-.person:nth-child(even) {
+.person:nth-child(odd) {
     flex-direction: row;
     text-align-last: left;
 }
 
-.person:nth-child(odd) {
+.person:nth-child(even) {
     flex-direction: row-reverse;
     text-align-last: right;
 }

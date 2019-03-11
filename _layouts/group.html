@@ -14,18 +14,53 @@ stylesheets:
 
 {{ content }}
 
-{% assign people = site.people  %}
+{% assign people = site.people | where: "group", page.name_short | sort %}
 
-{% for person in people %}
-    {% if person.group == page.name_short %}
-        <div class="person">
-            <div class="person__image">
-                <img src="{{ site.baseurl }}/assets/img/people/{{ person.image_name }}" alt="{{ person.name }}">
+{% if page.name_short == "HCC" %}
+    
+    <h1 class="person__group-header">Frontroom</h1>
+    <div>
+        {% for person in people limit: 4 %}
+            <div class="person">
+                <div class="person__image">
+                    <img src="{{ site.baseurl }}/assets/img/people/{{ person.image_name }}" alt="{{ person.name }}">
+                </div>
+                <div class="person__description">
+                    <h2>{{ person.name }}</h2>
+                    {{ person.content | markdownify }}
+                </div>
             </div>
-            <div class="person__description">
-                <h2>{{ person.name }}</h2>
-                {{ person.content | markdownify }}
+        {% endfor %}
+    </div>
+    
+
+    <h1 class="person__group-header">Backroom</h1>
+    <div>
+        {% for person in people offset: 4 %}
+            <div class="person">
+                <div class="person__image">
+                    <img src="{{ site.baseurl }}/assets/img/people/{{ person.image_name }}" alt="{{ person.name }}">
+                </div>
+                <div class="person__description">
+                    <h2>{{ person.name }}</h2>
+                    {{ person.content | markdownify }}
+                </div>
             </div>
-        </div>
-    {% endif %}
-{% endfor %}
+        {% endfor %}
+    </div>
+
+{% else %}
+    <div>
+        {% for person in people %}
+            <div class="person">
+                <div class="person__image">
+                    <img src="{{ site.baseurl }}/assets/img/people/{{ person.image_name }}" alt="{{ person.name }}">
+                </div>
+                <div class="person__description">
+                    <h2>{{ person.name }}</h2>
+                    {{ person.content | markdownify }}
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+{% endif %}
