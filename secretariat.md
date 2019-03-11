@@ -1,8 +1,6 @@
 ---
 title: The Secretariat
 layout: group
-group_name: The Secretariat
----
-
-## Members coming soon
+group_name: Secretariat
+name_short: Secretariat
 ---

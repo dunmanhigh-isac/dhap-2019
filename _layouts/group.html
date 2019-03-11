@@ -14,7 +14,9 @@ stylesheets:
 
 {{ content }}
 
-{% for person in site.people %}
+{% assign people = site.people  %}
+
+{% for person in people %}
     {% if person.group == page.name_short %}
         <div class="person">
             <div class="person__image">
