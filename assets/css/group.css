@@ -27,9 +27,16 @@
 }
 
 .person__description {
+    display: flex;
+    flex-direction: column;
     flex-basis: 80%;
+    align-items: center;
     margin-left: 1vw;
     margin-right: 1vw;
+}
+
+article.content .person__description > h2 {
+    width: auto;
 }
 
 .person__description > h3 {
