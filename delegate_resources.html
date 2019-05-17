@@ -1,0 +1,69 @@
+---
+layout: content
+title: Delegate Resources
+stylesheets:
+    - delegate_resources.css
+scripts:
+    - delegate_resources.js
+---
+
+{% include titlebar.html title="Delegate Resources" %}
+
+<div id="expando">
+    <form id="password-form" action="">
+        <label for="password" id="password-form__flash">Invalid password</label>
+        <input id="password" type="password" placeholder="Password...">
+        <button type="submit">Log in</button>
+    </form>
+    <div id="content--protected">
+
+        <div class="council">
+            <div class="council__title">AMEM</div>
+            <div class="council__files">
+                <a download href="{{ site.baseurl }}/assets/study-guides/AMEKMStudyGuideFull.pdf">
+                    <div class="council__file">Study Guide</div>
+                </a>
+            </div>
+        </div>
+        <div class="council">
+            <div class="council__title">AMMST</div>
+            <div class="council__files">
+                <a download href="{{ site.baseurl }}/assets/study-guides/AMMSTStudyGuideFull.pdf">
+                    <div class="council__file">Study Guide</div>
+                </a>
+            </div>
+        </div>
+        <div class="council">
+            <div class="council__title">ARF</div>
+            <div class="council__files">
+                <a download href="{{ site.baseurl }}/assets/study-guides/ARFStudyGuideFull.pdf">
+                    <div class="council__file">Study Guide</div>
+                </a>
+            </div>
+        </div>
+        <div class="council">
+            <div class="council__title">HCC</div>
+            <div class="council__files">
+                <a download href="{{ site.baseurl }}/assets/study-guides/HCCStudyGuideFull.pdf">
+                    <div class="council__file">Study Guide</div>
+                </a>
+            </div>
+        </div>
+        <div class="council">
+            <div class="council__title">Press Corps</div>
+            <div class="council__files">
+                <a download href="{{ site.baseurl }}/assets/study-guides/PressStudyGuideFull.pdf">
+                    <div class="council__file">Study Guide</div>
+                </a>
+            </div>
+        </div>
+        <div class="council">
+            <div class="council__title">UNSC</div>
+            <div class="council__files">
+                <div class="council__file">Coming Soon</div>
+            </div>
+        </div>
+
+    </div>
+
+</div>

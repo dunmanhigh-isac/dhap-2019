@@ -40,6 +40,8 @@ dates:
   start_time: 2019-06-06T07:45
   end_time: 2019-06-08T15:30
 
+resources_password: 27d8dabf6c693248f46273eb8aa6112d1210ce72e7995f744991beefe430
+
 collections_dir: writeups
 
 collections: 
