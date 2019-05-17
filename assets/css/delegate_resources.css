@@ -169,7 +169,6 @@ div.council__files a {
 
 @media screen and (max-width: 700px) {
     #expando {
-        max-width: 90%;
         min-height: 20vmin;
     }
 
