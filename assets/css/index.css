@@ -110,10 +110,24 @@ rect, circle {
 
 #countdown__over {
     display: none;
+    padding: 5px;
+}
+
+#countdown__over h1 {
     text-align: center;
-    font-size: 50pt;
+    font-size: 30pt;
     color: #eee;
 }
+
+#countdown__over p {
+    text-align: center;
+    color: #eee;
+}
+
+#countdown__over a {
+    color: var(--accent1);
+}
+
 
 #countdown__subtitle {
     background: rgba(204, 204, 204, 0.6);
@@ -235,6 +249,10 @@ rect, circle {
 
     #countdown__minutes {
         display: none;
+    }
+
+    #countdown__over h1 {
+        font-size: 25pt;
     }
 
     .countdown__digits {
