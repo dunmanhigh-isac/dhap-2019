@@ -68,3 +68,44 @@ rendered as part of the councils/org_committee pages.
 
 ## Pages
 
+Simpler content pages, like `registration.md`, `about.md` and so on, are written up in Markdown. They each include a titlebar (`_includes/titlebar.html`), requiring a background image and a title.
+
+The more dynamic pages (`schedule.html` and `delegate_resources.html`) have custom layouts and scripting. This is provided by stylesheets and scripts included in each page's front matter, along with a custom HTML template.
+
+The index pages `councils.html` and `org_comm.html` are both very similar to each other, iterating through their respective collections and rendering them on a 'list'. All the animations on these two pages are built with CSS `@keyframes`. There _is_ a `councils.js` file in the site assets, but it's unused.
+
+### Scripting
+
+Apart from the header, only 3 pages include scripting: the landing page, delegate\_resources, and schedule.
+
+They take advantage that any file with an empty front matter will still be processed by Jekyll:
+```
+---
+---
+```
+
+This allows site variables, defined in `_config.yml`, to be injected into the scripts at build time.
+
+* Landing page: countdown
+
+    Before DHAP 2019 started, there was a countdown to the start of the event. The circular countdown animation around each number is based on [this guide on animating SVG paths using stroke offsets](https://css-tricks.com/svg-line-animation-works/); instead of using a random path, an SVG circle is used instead.
+
+    Site variables used: `dates.launch_time`, `dates.start_time`, `dates.end_time`
+
+* Delegate resources: password
+
+    The delegate resources are 'locked' behind a password. However, since this is a static site without any server-side behaviour, the password check is done on the client:
+
+    - The page generates a SHA-256 hash from the user's input
+    - ...which is then compared against a reference hash included by the site variable `resources_password`.
+
+    Apart from the password check, most of the scripting here revolves around adding/removing CSS classes on the password box.
+
+    Site variables used: `resources_password`
+
+* Schedule
+
+    The 'progress bar' is implemented as a really tall div before each item (in css, the pseudo-element `::before` is used). A date is tied to each `data-date` attribute by injecting it with Jekyll. From there, the script simply compares that date attribute with the current date/time, and adds a 'filled' class if that time has passed.
+
+    The items are generated from `_data/schedule.yml`.
+
